@@ -1,4 +1,4 @@
-##GraphQL Client
+## GraphQL Client
 
 ### Steps to Run
 - > Checkout to corresponding [server](https://github.com/manojd929/graphql-ecommerce-server) folder
