@@ -70,23 +70,25 @@ class Home extends React.Component {
                                         {name}
                                     </CardHeader>
                                     <CardBody>
-                                        <div
+                                        <img
+                                            src={require('./laptop_image.jpg')}
+                                            alt="Laptop"
                                             style={{
-                                                height: '200px',
-                                                width: '200px',
+                                                height: '100%',
+                                                width: '100%',
                                             }}
                                         />
                                         <CardText>{description}</CardText>
                                     </CardBody>
                                     <CardFooter>
-                                        <Row>
+                                        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                                             <CardSubtitle>{currency + ' ' + value + '/-'}</CardSubtitle>
                                             <Button
                                                 onClick={() => this.props.onAdd(name, value)}
                                             >
-                                                Add
+                                                Add to Cart
                                             </Button>
-                                        </Row>
+                                        </div>
                                     </CardFooter>
                                 </Card>
                             )

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Row, Navbar, Button } from 'reactstrap'
+import { Button } from 'reactstrap'
 import Home from './components/Home'
 import PayWithPayPal from './components/PayWithPayPal'
 
@@ -30,24 +30,22 @@ class App extends React.Component {
         }
         return (
             <React.Fragment>
-                <Row>
-                    <Navbar color="light">
-                        Laptop Store
-                        <div style={{ marginLeft: '20px' }}>
-                            <span>Total: Rs. {total}/-</span>
-                            <Button
-                                style={{ marginLeft: '20px' }}
-                                onClick={() => {
-                                    if (total > 0) {
-                                        this.setState({ isCheckout: true })
-                                    }
-                                }}
-                            >
-                                Checkout {`(${checkoutList.length})`}
-                            </Button>
-                        </div>
-                    </Navbar>
-                </Row>
+                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
+                    <div style={{ fontWeight: 'bold' }}>Laptop Store</div>
+                    <div>
+                        <span>Total: Rs. {total}/-</span>
+                        <Button
+                            style={{ marginLeft: '20px' }}
+                            onClick={() => {
+                                if (total > 0) {
+                                    this.setState({ isCheckout: true })
+                                }
+                            }}
+                        >
+                            Checkout {`(${checkoutList.length})`}
+                        </Button>
+                    </div>
+                </div>
                 <Home
                     onAdd={this.onAdd}
                 />
