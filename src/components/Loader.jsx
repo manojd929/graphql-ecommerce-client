@@ -3,7 +3,9 @@ import { Spinner } from 'reactstrap'
 
 function Loader() {
     return (
-        <Spinner size="sm" color="primary" />
+        <div className="loader">
+            <Spinner size="sm" color="primary" />
+        </div>
     )
 }
 

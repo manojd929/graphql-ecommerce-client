@@ -2,6 +2,7 @@ import React from 'react'
 import { Button } from 'reactstrap'
 import Home from './components/Home'
 import PayWithPayPal from './components/PayWithPayPal'
+import './App.css'
 
 class App extends React.Component {
     state = {
@@ -30,12 +31,12 @@ class App extends React.Component {
         }
         return (
             <React.Fragment>
-                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
-                    <div style={{ fontWeight: 'bold' }}>Laptop Store</div>
-                    <div>
-                        <span>Total: Rs. {total}/-</span>
+                <div className="home-container">
+                    <div className="brand">Laptop Store</div>
+                    <div className="checkout">
+                        <div className="checkout-total">Total: Rs. {total}/-</div>
                         <Button
-                            style={{ marginLeft: '20px' }}
+                            className="checkout-button"
                             onClick={() => {
                                 if (total > 0) {
                                     this.setState({ isCheckout: true })

@@ -1,0 +1,35 @@
+/*
+  NavBar - Main Header
+*/
+.home-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    background-color: navajowhite;
+}
+
+.brand {
+    font-weight: bolder;
+    font-size: larger;
+}
+
+.checkout {
+    font-size: large;
+    font-weight: bold;
+}
+.checkout-total {
+    display: inline;
+    margin-right: 25px;
+}
+.checkout-button {
+    font-weight: bold;
+}
+
+/*
+    Home Container
+*/
+.image {
+    height: 100%;
+    width: 100%;
+}

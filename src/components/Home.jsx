@@ -2,7 +2,7 @@ import React from 'react'
 import {
     Container, Row, Col,
     Card, CardText, CardBody,
-    CardSubtitle, Button, CardFooter, CardHeader
+    Button, CardFooter, CardHeader
 } from 'reactstrap';
 import Loader from './Loader'
 
@@ -61,28 +61,29 @@ class Home extends React.Component {
         return (
             <Container fluid={true}>
                 <Row>
-                    <Col>
-                        {laptops.map((laptop, index) => {
-                            const { id, name, description, price: { currency, value } } = laptop
-                            return (
+                    {laptops.map((laptop, index) => {
+                        const { id, name, description, price: { currency, value } } = laptop
+                        return (
+                            <Col lg="4" md="6" sm="12" key={index}>
                                 <Card key={index + id}>
                                     <CardHeader>
-                                        {name}
+                                        <b>{name}</b>
                                     </CardHeader>
                                     <CardBody>
                                         <img
+                                            className="image"
                                             src={require('./laptop_image.jpg')}
                                             alt="Laptop"
-                                            style={{
-                                                height: '100%',
-                                                width: '100%',
-                                            }}
                                         />
                                         <CardText>{description}</CardText>
                                     </CardBody>
                                     <CardFooter>
-                                        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                                            <CardSubtitle>{currency + ' ' + value + '/-'}</CardSubtitle>
+                                        <div className="card-footer" style={{
+                                            display: 'flex',
+                                            justifyContent: 'space-between',
+                                            alignItems: 'center'
+                                        }}>
+                                            <div>{currency + ' ' + value + '/-'}</div>
                                             <Button
                                                 onClick={() => this.props.onAdd(name, value)}
                                             >
@@ -91,10 +92,10 @@ class Home extends React.Component {
                                         </div>
                                     </CardFooter>
                                 </Card>
-                            )
-                        }
-                        )}
-                    </Col>
+                            </Col>
+                        )
+                    }
+                    )}
                 </Row>
             </Container>
         )
